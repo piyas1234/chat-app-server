@@ -1,0 +1,50 @@
+{
+  "name": "multi-vendor-ecomarce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config -r @babel/register src/config/config.js",
+    "watch": "nodemon --exec node -r dotenv/config -r @babel/register src/config/config.js",
+    "test": "mocha -r @babel/register -r dotenv/config -t 10000 --exit",
+    "test:watch": "nodemon --exec mocha -R progress -r @babel/register -r dotenv/config -t 10000 --exit",
+    "lint": "eslint src/** src/config/config.js index.js test/**",
+    "lint:fix": "eslint --fix src/** src/config/config.js index.js test/**"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@hapi/boom": "^9.1.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.8",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "@types/express": "^4.17.13",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^9.1.2",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
+    "supertest": "^6.1.6"
+  },
+  "engines": {
+    "node": "14.17.4"
+  }
+}
