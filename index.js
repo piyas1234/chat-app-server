@@ -7,6 +7,7 @@ import router from "./src/route";
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api", router);
