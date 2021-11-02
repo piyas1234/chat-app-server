@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
-// User Schema
+// User Schema//
 const profileSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       required: true,
     },
 
@@ -13,10 +13,10 @@ const profileSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    deliveryadress: {
-      type: Array,
-      required: true,
-    },
+
+    facebookLink: String,
+    instaLink: String,
+    twitterLink: String,
 
     date: { type: Date, default: Date.now },
   },

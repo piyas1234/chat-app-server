@@ -1,6 +1,7 @@
 import express from "express";
 import auth from "./../../middlewares/auth";
 import adminAuth from "./../../middlewares/adminAuth";
+
 import {
   getProfileView,
   getSingleProfileView,

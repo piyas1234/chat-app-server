@@ -1,4 +1,4 @@
-import asyncHandler from "../../middlewares/asyncHandler";
+
 import UserModel from "../../model/UserModel";
 import Boom from "@hapi/boom";
 import bcrypt from "bcryptjs";
@@ -56,9 +56,13 @@ export const postUserView = async (req, res, next) => {
     await user.save();
     await res.status(200).json({ message: "User was Create successfully!" });
   } catch (err) {
-    return next(Boom.badRequest(err.message));
+    return next(Boom.badRequest(err));
   }
 };
+
+
+
+
 
 export const getAllUsersView = async (req, res, next) => {
   const { page = 1, limit = 10 } = req.query;
@@ -89,7 +93,6 @@ export const getSingleUserView = async (req, res, next) => {
 };
 
 export const getOwnUserView = async (req, res, next) => {
-  
   try {
     const user = await UserModel.find({ _id: ObjectId(req.id) });
     await res.send(user);

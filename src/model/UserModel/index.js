@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
     name: {
       type: String,
       required: [true, "Name is required"],
-      trim: true,
+       
     },
     email: {
       type: String,
@@ -39,18 +39,13 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       default: "user",
-      enum: ["admin", "merchant", "user"],
+      enum: ["admin", "user"],
     },
     profile: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Profile",
     },
-
-    product: [
-      { type: mongoose.Schema.Types.ObjectId,
-        ref: "Product", },
-    ],
-
+    
     date: { type: Date, default: Date.now },
   },
   { timestamps: true }

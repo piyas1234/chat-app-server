@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config -r @babel/register src/config/config.js",
-    "watch": "nodemon --exec node -r dotenv/config -r @babel/register src/config/config.js",
+    "start": "nodemon -r dotenv/config -r @babel/register index.js",
+    "watch": "nodemon --exec node -r dotenv/config -r @babel/register index.js",
     "test": "mocha -r @babel/register -r dotenv/config -t 10000 --exit",
     "test:watch": "nodemon --exec mocha -R progress -r @babel/register -r dotenv/config -t 10000 --exit",
     "lint": "eslint src/** src/config/config.js index.js test/**",
@@ -19,12 +19,14 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.1.2",
     "mongoose": "^6.0.8",
+    "socket.io": "^4.3.1",
     "validator": "^13.6.0"
   },
   "devDependencies": {
@@ -45,6 +47,6 @@
     "supertest": "^6.1.6"
   },
   "engines": {
-    "node": "14.17.4"
+    "node": "16.10.0"
   }
 }
